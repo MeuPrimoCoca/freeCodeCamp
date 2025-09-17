@@ -1,8 +1,9 @@
-{
-  "name": "freeCodeCampDC",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "devcontainer",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  // "features": {},
-  "forwardPorts": [3000, 8000]
-}
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v:IsA("Tool") and string.find(v.Name, "Fruit") then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        v.Parent = game.Players.LocalPlayer.Backpack
+        wait(0.5)
+        print("🍍 Fruta pegada: "..v.Name)
+    end
+end
+
